@@ -1,7 +1,9 @@
-# function to decode encrypted message. needs the encrypted message and number shifted as inputs.
+# function to decode encrypted message
+# takes in the encrypted message as a list and number shifted as an integer
+# outputs nothing. prints the decrypted message as a string
 def decoder(encrypted_message, shift_number):
     
-    # decode each letter by shifting back
+    # decodes each letter by shifting back then prints the decrypted message
     decoded_message = ''
 
     for letter in encrypted_message:
