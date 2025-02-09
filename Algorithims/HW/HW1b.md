@@ -88,6 +88,15 @@ Top Ten Sequences:
 9. Collatz sequence for 8474249 has 611 values, whose largest value is 1017886660
 10. Collatz sequence for 6355687 has 608 values, whose largest value is 1017886660
 
+## Analysis
+
+After watching the video on the Collatz Conjecture, it was surprising to see that such a simple set of rules is so hard to prove. However, after listening to the history of this conjecture, it is understandeable why it is hard for both humans and computers to prove this.
+
+It doesn't seem possible to prove this conjecture through computers, since it seems all that can be done is to keep trying numbers as they approach infinity. However, no matter how large of a number inputted, there is always a larger number out there that could disprove the conjecture. Aside from that, proving such a myriad of numbers would take an infinite amount of time.
+
+So it seems a more intelligent way is needed to prove this conjecture, however there are a couple things that make this difficult. The first, is that there seems to be no pattern to the Collatz Sequence's from number to number. These sequences even vary drastically from two adjacent numbers. Because of this, it seems impossible to find a loop invariant property that holds at each iteration. Another reason is that all mathematical methods used to prove this conjecture have failed to actually prove the conjecture, although they have gotten close(Terence Tao).
+
+
 # Q5: Extra credit Program
 
 ## Details
