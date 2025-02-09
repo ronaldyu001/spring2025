@@ -4,11 +4,15 @@ import time
 # time efficiency decorator
 def timeEfficiencyDecorator(func):
     def wrapper(*args, **kwargs):
+        # get start time before inner function
         startTime = time.time()
         print(f'Start Time: {startTime}')
 
+        # inner function
         lst = func(*args, **kwargs)
 
+        # get end time and calculate duration after inner function
+        # get the shortened resulting list of prime numbers
         endTime = time.time()
         print(f'End Time: {endTime}')
         duration = endTime - startTime

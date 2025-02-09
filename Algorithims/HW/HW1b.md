@@ -64,10 +64,9 @@ Random approach:
         Lowest number guesses: 1
         Average number of guesses: 1007.4993
 
-
 # Q4: Collatz 3n + 1 Algorithm
 
-# Details
+## Details
 
 The collatz algorithm was implemented recursively. It starts with any positive integer, and based on if the number is even or odd, it will perform a mathematical function on the number. This is done until the number reaches one. The numbers calculated from the starting number to one make up the Collatz Sequence(including the starting number and one).
 
@@ -95,7 +94,6 @@ After watching the video on the Collatz Conjecture, it was surprising to see tha
 It doesn't seem possible to prove this conjecture through computers, since it seems all that can be done is to keep trying numbers as they approach infinity. However, no matter how large of a number inputted, there is always a larger number out there that could disprove the conjecture. Aside from that, proving such a myriad of numbers would take an infinite amount of time.
 
 So it seems a more intelligent way is needed to prove this conjecture, however there are a couple things that make this difficult. The first, is that there seems to be no pattern to the Collatz Sequence's from number to number. These sequences even vary drastically from two adjacent numbers. Because of this, it seems impossible to find a loop invariant property that holds at each iteration. Another reason is that all mathematical methods used to prove this conjecture have failed to actually prove the conjecture, although they have gotten close(Terence Tao).
-
 
 # Q5: Extra credit Program
 

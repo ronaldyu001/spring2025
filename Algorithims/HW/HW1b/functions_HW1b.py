@@ -31,7 +31,7 @@ def binarySearch(maxValue):
 def timeEfficiency(func):
 
     """
-    takes a function as an INPUT along with its arguments.
+    takes a function as an INPUT.
     runs it.
     OUTPUTs the start time, end time, and duration.
     """
