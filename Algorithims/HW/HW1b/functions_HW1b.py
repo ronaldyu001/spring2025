@@ -1,7 +1,7 @@
 # libraries
 import time
 import random
-import decorators
+import HW1b.decorators_HW1b as decorators_HW1b
 
 
 # binary search
@@ -189,7 +189,7 @@ def colatzGenerator(colatzSequence, number):
         colatzGenerator(colatzSequence, number*3 + 1)
 
 
-@decorators.timeEfficiencyDecorator
+@decorators_HW1b.timeEfficiencyDecorator
 def listPrimeNumbers2(maxNumber):
     """Finds all prime numbers from 2 to max_num."""
     primes = []
