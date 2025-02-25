@@ -6,7 +6,11 @@ For functions where n is able to be isolated (such as log(n), n, n^2, etc.), the
 
 - For log(n), the result was too large for Python to handle. To solve this, the evalf() and Pow() functions were leveraged from the sympy library.
 
-For functions where n was unable to be isolated (n*log(n), n!), a brute force method was applied.* 
+For functions where n was unable to be isolated (n*log(n), n!), a brute force method was applied.*
 
 * For n*log(n), the scipy.optimize.fsolve() function was leveraged from the scipy library. This function takes an initial guess (10000 used in this homework). It then uses a combination of root-finding algorithms to determine the next guess. Once the guesses converge enough towards a root, the function stops.
-* For n!, the gamma() function was leveraged from the math library. This gamma function accounts for decimal values, unlike the factorial() function. An initial value of n = 1 was used, and incremented by .000001 until the value is equal to or greater than the target time. A small increment was used to improve the accuracy of the gamma function, with a longer runtime being the cost. However, the runtime is not unreasonable.
+* For n!, the factorial() function was leveraged from the math library. Using an initial value of 'n = 1', the factorial was calculated using the factorial() function. The value of 'n' was incremented by 1 until n! was greater than or equal to the target time. The value for 'n-1' was taken as the answer, as that is the factorial that places the time at or right under the target time.
+
+# Q2:
+
+Looking at the time efficiency graphs for the Insertion and Merge Sorts, the Insertion not only took much longer for each data size, but also scaled faster. This was expected, as the Insertion Sort has a time efficiency of O(n^2), compared to Merge Sort's time efficiency of O(n*log(n)).

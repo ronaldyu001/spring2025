@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="index.js" type="text/javascript" defer></script>
+    
+    <!-- css styling -->
+    <style>
+        /* body */
+        body{
+            /* dimensions */
+            height: 150vh;
+            width: 100vw;
+        }
+
+        /* header */
+        header{
+            /* dimensions */
+            height: 15%;
+            width: 100%;
+        }
+
+        a{
+            height: 100%;
+            width: 100%;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* title */
+        #title{
+            /* display type */
+            display: flex;
+
+            /* font */
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 5vw;
+
+            /* center title */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main{
+            /* dimensions */
+            height: 65%;
+            width: 100%;
+
+            /* grid settings */
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50% 30% 20%;
+
+            align-content: center;
+            justify-items: center;
+        }
+
+        .plot{
+            display: flex;
+
+            height: 90%;
+            width: 90%;
+
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* insertion plot */
+        #plot1{
+            background-image: url("Figure_1.png");
+        }
+
+        /* merge plot */
+        #plot2{
+            background-image: url(Figure_2.png);
+        }
+        
+        /* table */
+        .table{
+            height: 90%;
+            width: 90%;
+
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-rows: 14% 14% 14% 14% 14% 14% 14%;
+
+            justify-items: center;
+            align-items: center;
+        }
+
+        /* tabel labels */
+        .label{
+            /* display type */
+            display: flex;
+
+            /* font size */
+            font-size: 1.5vw;
+
+            /* center text */
+            align-items: center;
+            justify-content: center;
+
+            /* make borders visible */
+            border-bottom: solid black .1vw;
+            border-right: solid black .1vw;
+        }
+
+        /* tabel data */
+        .data{
+            /* display type */
+            display: flex;
+
+            /* font size */
+            font-size: 1.2vw;
+
+            /* center text */
+            align-items: center;
+            justify-content: center;
+
+            /* make borders visible */
+            border-bottom: solid black .1vw;
+            border-right: solid black .1vw;
+        }
+
+        .plot_title{
+            display: flex;
+
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2vw;
+
+            justify-content: center;
+        }
+
+        .analysis{
+            height: 100%;
+            width: 80%;
+
+            display: grid;
+            grid-template-rows: 5% 95%;
+
+            position: absolute;
+            left: 10vw;
+        }
+
+        .analysis_title{
+            height: 100%;
+            width: 100%;
+
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2vw;
+        }
+
+        .analysis_text{
+            height: 100%;
+            width: 100%;
+
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5vw;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- title -->
+    <header>
+        <a id="title">Insertion Sort vs Merge Sort Analysis</a>
+    </header>
+
+    <!-- main content -->
+    <div class="main">
+        <!-- plots -->
+        <div class="plot" id="plot1"></div>
+        <div class="plot" id="plot2"></div>
+
+        <div class="table">
+            <a class="label">Data Size</a>
+            <a class="label">Worst Case</a>
+            <a class="label">Avg Case</a>
+            <a class="label">Actual</a>
+
+            <a class="data">1,000</a>
+            <a class="data">499,500</a>
+            <a class="data">124,875</a>
+            <a class="data">155,939</a>
+
+            <a class="data">10,000</a>
+            <a class="data">49,995,000</a>
+            <a class="data">12,498,750</a>
+            <a class="data">14,777,072</a>
+        
+            <a class="data">100,000</a>
+            <a class="data">4,999,950,000</a>
+            <a class="data">1,249,987,500</a>
+            <a class="data">1,462,992,853</a>
+
+            <a class="data">250,000</a>
+            <a class="data">31,249,875,000</a>
+            <a class="data">7,812,468,750</a>
+            <a class="data">9,126,683,595</a>
+
+            <a class="data">500,000</a>
+            <a class="data">124,999,750,000</a>
+            <a class="data">31,249,937,500</a>
+            <a class="data">36,563,571,640</a>
+
+            <a class="data">1,000,000</a>
+            <a class="data">499,999,500,000</a>
+            <a class="data">124,999,875,000</a>
+            <a class="data">146,213,390,938</a>
+        </div>
+
+        <div class="table">
+            <a class="label">Data Size</a>
+            <a class="label">Worst Case</a>
+            <a class="label">Avg Case</a>
+            <a class="label">Actual</a>
+
+            <a class="data">1,000</a>
+            <a class="data">9,965</a>
+            <a class="data">9,965</a>
+            <a class="data">8,713</a>
+
+            <a class="data">10,000</a>
+            <a class="data">132,877</a>
+            <a class="data">132,877</a>
+            <a class="data">120,462</a>
+
+            <a class="data">100,000</a>
+            <a class="data">1,660,964</a>
+            <a class="data">1,660,964</a>
+            <a class="data">1,536,307</a>
+
+            <a class="data">250,000</a>
+            <a class="data">4,482,892</a>
+            <a class="data">4,482,892</a>
+            <a class="data">4,168,028</a>
+
+            <a class="data">500,000</a>
+            <a class="data">9,465,784</a>
+            <a class="data">9,465,784</a>
+            <a class="data">8,836,552</a>
+
+            <a class="data">1,000,000</a>
+            <a class="data">19,931,568</a>
+            <a class="data">19,931,568</a>
+            <a class="data">18,673,054</a>
+        </div>
+
+        <a class="plot_title">Insertion Sort Comparisons</a>
+        <a class="plot_title">Merge Sort Comparisons</a>
+    </div>
+
+    <div class="analysis">
+        <a class="analysis_title">Analysis:</a>
+        <a class="analysis_text">
+            In order to understand how the time efficiency would scale with each input size, the worst and average number
+            of comparisons for each input size were analyzed. It was assumed that the time efficiency would scale proportional
+            to the number of comparisons (more interested on average case).
+            A run time of one microsecond was assumed for each comparison.
+            <br><br>
+            Looking at the INSERTION SORT, there is an average of 249,750 comparisons for an input size of 1,000.
+            At 1 microsecond per comparison, the estimated time efficiency is ~.25 seconds. This ended up being incorrect,
+            with an actual time efficiency of .01.
+            <br><br>
+            Although the time per comparison was off, the scaling of the number of comparisons between each input size can be looked at.
+            A breakdown of how the comparison scaled between input sizes is shown below:
+            <br>
+            <pre>     1,000 ->    10,000:   ~100 (Actual:  ~95)</pre>
+            <pre>    10,000 ->   100,000:   ~100 (Actual: ~100)</pre>
+            <pre>   100,000 ->   250,000:     ~6 (Actual:   ~6)</pre>
+            <pre>   250,000 ->   500,000:     ~4 (Actual:   ~4)</pre>
+            <pre>   500,000 -> 1,000,000:     ~4 (Actual:   ~4)</pre>
+            <br>
+            Taking the above information into account, the time efficiencies for the insertion sort seems to have scaled
+            proportional to the average number of comparisons. Only the 1,000 to 10,000 seemed to be off.
+            Although the number of comparisons scaled by ~95, the time efficiency scaled by only ~43,
+            which was quite the discrepancy.
+            This may be due to the 1,000 and 10,000 input sizes being able to fit inside the CPU cache, thus allowing for faster
+            memory access. The 100,000 and up data sizes may be too large to fit in the CPU cache, and was accessed through RAM instead.
+            Although if this is the case, it was expected that the time efficiency would scale larger than the comparisons when looking at
+            10,000 to 100,000 input sizes, which was not seen.
+            <br><br>
+            Looking at the MERGE SORT. As expected, the time efficiency also scaled proportional to the number of comparisons.
+            However, it had the same discrepancy (time efficiency scaled significantly smaller than comparisons scaled),
+            this time between the 1,000 to 10,000 AND 10,000 to 100,000 
+            input sizes, possibly for the same reason (cache vs RAM).
+        </a>
+    </div>
+
+  </body>
+<html>

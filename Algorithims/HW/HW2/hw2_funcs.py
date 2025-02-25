@@ -1,8 +1,11 @@
 import math
+import matplotlib.figure
+import matplotlib.pyplot
 import scipy.optimize
 import sympy
 import scipy
 import time
+import matplotlib
 
 # --------- #
 #   Q1      #
@@ -77,7 +80,15 @@ def timeEfficiencyDecorator(func):
     return wrapper
 
 
-# insertion algorithm
+# read file into list
+def readFile(file):
+    # extract numbers from file into list
+    with open(file, "r") as file:
+        unsorted = [int(num) for line in file for num in line.split()]
+        return unsorted
+
+
+# insertion sort
 @timeEfficiencyDecorator
 def insertionSort(file):
     # variables
@@ -85,8 +96,7 @@ def insertionSort(file):
     sorted = []
 
     # extract numbers from file into list
-    with open(file, "r") as file:
-        unsorted = [int(num) for line in file for num in line.split()]
+    unsorted = readFile(file)
     
     # add first unsorted value to sorted list
     sorted.append(unsorted[0])
@@ -101,4 +111,81 @@ def insertionSort(file):
                 break
         if not inserted:
             sorted.append(unsorted[i])
-    print(sorted, comparisonCounter)
+    # print(sorted, comparisonCounter)
+    print(f'Comparisons: {comparisonCounter}')
+
+
+# global counter for merge sort
+_comparisonCounter = 0
+
+# merge sort (merge)
+def merge(left, right):
+    #variables
+    sorted = []
+    i = j = 0
+    global _comparisonCounter
+
+    # merge left and right halves in sorted order
+    while i < len(left) and j < len(right):
+        _comparisonCounter += 1
+        if left[i] <= right[j]:
+            sorted.append(left[i])
+            i += 1
+        else:
+            sorted.append(right[j])
+            j += 1
+
+    # If any elements remain in either left or right, add them to the sorted list
+    sorted.extend(left[i:])
+    sorted.extend(right[j:])
+
+    return sorted
+
+
+# merge sort container
+@timeEfficiencyDecorator
+def mergeSortContainer(file):
+    # read file into list
+    global _comparisonCounter
+    unsorted = readFile(file)
+    _comparisonCounter = 0
+    x = mergeSort(unsorted)
+    print(f'{file}: {_comparisonCounter} comparisons')
+    return
+
+
+# merge sort
+def mergeSort(unsorted):
+    # DIVIDE
+    # base case: return sublist when size reaches 1
+    if len(unsorted) == 1:
+        return unsorted[:]
+
+    # find middle, recursively divide left and right sides
+    middle = len(unsorted) // 2
+    left = mergeSort(unsorted[:middle])
+    right = mergeSort(unsorted[middle:])
+
+    # merged sublists, return sorted list
+    return merge(left, right)
+
+
+# plot
+def plot(x, y, title):
+    # graph will open in separate window
+    fig = matplotlib.pyplot.figure()
+    
+    # plot
+    matplotlib.pyplot.plot(x, y, marker='o', linestyle='-', color='b', label='Line Plot')
+
+    # Add text labels for each point
+    for i in range(len(x)):
+        matplotlib.pyplot.text(x[i], y[i], f'{y[i]})', fontsize=10, ha='right')
+
+    # axis labels and title
+    matplotlib.pyplot.xlabel('Data Size (n)')
+    matplotlib.pyplot.ylabel('Execution Time (s)')
+    matplotlib.pyplot.title(title)
+
+    # show both graphs at the same time
+    matplotlib.pyplot.show(block=False)
