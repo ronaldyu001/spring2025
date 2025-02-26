@@ -14,3 +14,25 @@ For functions where n was unable to be isolated (n*log(n), n!), a brute force me
 # Q2:
 
 Looking at the time efficiency graphs for the Insertion and Merge Sorts, the Insertion not only took much longer for each data size, but also scaled faster. This was expected, as the Insertion Sort has a time efficiency of O(n^2), compared to Merge Sort's time efficiency of O(n*log(n)).
+
+# Q3:
+
+## 3.1:
+
+Finding an algorithm's property that remains true before and after each iteration.
+
+## 3.2:
+
+Before each merge call, the left and right lists are sorted. After each merge call, the left and right sublists are combined, and a sorted list is returned.
+
+## 3.3:
+
+At the first merge, the left and right arrays both have length of 1. These are sorted due to the length.
+
+## 3.4:
+
+After the iteration, the array returned will be a sorted, combined list of the left and right input lists.
+
+## 3.5:
+
+The merge sort terminates after it's last recursive call. Since the Initialization and Maintenance steps prove a sorted list is returned after each recursive call, the two halves inputted in the final recursive call are sorted, and the final list is sorted.
