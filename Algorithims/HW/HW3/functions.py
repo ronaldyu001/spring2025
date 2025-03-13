@@ -57,7 +57,7 @@ def plot(x, y, title, color):
 #   QUESTION 1.1
 #--------------------
 # max heapfiy (iterable)
-def maxHeapify( array, index ):
+def maxHeapify_iterable( array, index ):
     # keep running until heap property is restored
     while True:
         # variables
@@ -99,11 +99,11 @@ def write_array_to_file( array, filename ):
 
 # build max heap
 @timeEfficiencyDecorator
-def build_max_heap( array ):
+def build_max_heap_iterable( array ):
     n = len( array )
     # Start from the last non-leaf node and heapify each node
     for i in range( n // 2 - 1, -1, -1 ):
-        maxHeapify( array , i)
+        maxHeapify_iterable( array , i)
 
 
 # verify max heap (checks if build max heap works)

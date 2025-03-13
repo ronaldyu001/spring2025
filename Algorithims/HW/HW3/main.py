@@ -37,11 +37,13 @@ if __name__ == "__main__":
             array_2 = array_1
 
             # build max heap iterable
-            build_max_heap( array_1 )
+            print( f'ITERABLE' )
+            build_max_heap_iterable( array_1 )
             write_array_to_file( array_1, 'output_1' )
             print( f'Heapified: { verify_max_heap( array_1 ) }' )
 
             # build max heap recursive
+            print( f'RECURSIVE' )
             build_max_heap_recursive( array_2 )
             write_array_to_file( array_2, 'output_2')
             print( f'Heapified: { verify_max_heap( array_2 ) }' )
