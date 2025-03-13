@@ -13,24 +13,24 @@ if __name__ == "__main__":
 
     while True:
         # display main menu
-        print(f'\
+        print( f'\
                             HW3\n\
               0) QUIT\n\
-              1) Q1.1: Max Heapify (iterative)\n\
+              1) Q1.1: Max Heapify\n\
               2) Q3.2.a: Quicksort, Optimizing Bubble Sort\n\
               3) Q3.2.b: Hybrid Sort, Data Visualization\n\
-              4) \n')
+              4) \n' )
         
         # ask for user input
-        user_input = int(input(f'Enter Menu Option: '))
+        user_input = int( input( f'Enter Menu Option: ' ) )
 
 
-        # option 0
+        # option 0 (exit)
         if user_input == 0:
             break
 
 
-        # option 1
+        # option 1 (Build Max Heap Iterative and Recursive)
         elif user_input == 1:
             # read input file into an array
             array_1 = readFile( testFiles[ 5 ] )
@@ -47,7 +47,7 @@ if __name__ == "__main__":
             print( f'Heapified: { verify_max_heap( array_2 ) }' )
 
 
-        # option 2
+        # option 2 (Quicksort and Optimizing Bubble Sort)
         elif user_input == 2:
             # read input file into an array
             array_1 = readFile( testFiles[ 0 ] )
@@ -66,16 +66,22 @@ if __name__ == "__main__":
             print( f'Sorted: { is_sorted( array_2 ) }' )
 
 
-        # option 3
+        # option 3 (Hybrid Sort and Data Visualization)
         elif user_input == 3:
             # array to store average durations for varying ks
             data = []
 
+            # variables
+            k_min = 2
+            k_max = 200
+            interval = 10
+            k_iterations = 3
+
             # iterate through each k (2 - 20)
-            for k in range( 2, 200, 30 ):
+            for k in range( k_min, k_max, interval ):
                 duration = 0
                 # run each k 10 times and get the average time
-                for i in range(3):
+                for i in range( k_iterations ):
                     # read data into array
                     array_3 = readFile( testFiles[ 5 ])
                     duration += hybridsort( array_3, 0, len( array_3 ) - 1, k)
@@ -83,8 +89,8 @@ if __name__ == "__main__":
                     # print( f'Sorted: { is_sorted( array_3 ) }' )
 
                 # add each average k time to data
-                data.append( duration / 3 )
+                data.append( duration / k_iterations )
 
             # display graph
-            plot( [ int for int in range( 2, 200, 30 ) ], data, 'Hybrid Sort: k vs time', 'r' )
+            plot( [ int for int in range( k_min, k_max, interval ) ], data, 'Hybrid Sort: k vs time', 'r' )
             
