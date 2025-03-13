@@ -85,7 +85,7 @@ if __name__ == "__main__":
                 # run each k 10 times and get the average time
                 for i in range( k_iterations ):
                     # print k values
-                    print( f'k = { i }' )
+                    print( f'k = { k }' )
                     # read data into array
                     array_3 = readFile( testFiles[ 5 ])
                     duration += hybridsort( array_3, 0, len( array_3 ) - 1, k )

@@ -66,9 +66,6 @@ def maxHeapify_iterable( array, index ):
         left_child = index * 2 + 1
         right_child = index * 2 + 2
 
-        temp = 101
-        temp = temp * temp
-
         # if left child exists and greater than largest, it is now largest
         if left_child < len( array ) and array[ left_child ] > array[ largest ]:
             largest = left_child
@@ -136,8 +133,6 @@ def max_heapify_recursive(array, i):
         array[i], array[largest] = array[largest], array[i]
         max_heapify_recursive(array, largest)   # largest == new i
 
-        temp = 101 + i
-        temp = temp * temp
 
 # build max heapify recursive
 @timeEfficiencyDecorator
