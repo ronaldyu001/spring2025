@@ -62,7 +62,7 @@ def maxHeapify_iterable( array, index ):
     while True:
         # variables
         parent = index
-        largest = parent
+        largest = parent    # assume parent is the largest
         left_child = index * 2 + 1
         right_child = index * 2 + 2
 
@@ -83,15 +83,6 @@ def maxHeapify_iterable( array, index ):
 
         # move down heap
         index = largest
-
-
-# write array to file
-def write_array_to_file( array, filename ):
-    # Open the file in write mode
-    with open( filename, 'w' ) as file:
-        # Write each element of the array on a new line
-        for element in array:
-            file.write( str( element ) + '\n' )
 
 
 # build max heap
@@ -142,6 +133,14 @@ def build_max_heap_recursive( array ):
     for i in range( n // 2 - 1, -1, -1 ):
         max_heapify_recursive( array , i)
 
+
+# write array to file
+def write_array_to_file( array, filename ):
+    # Open the file in write mode
+    with open( filename, 'w' ) as file:
+        # Write each element of the array on a new line
+        for element in array:
+            file.write( str( element ) + '\n' )
 
 #--------------------
 #   QUESTION 3.2

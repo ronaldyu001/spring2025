@@ -3,12 +3,14 @@ from functions import*
 
 if __name__ == "__main__":
     # data sets provided
-    testFiles = ["data/rand1000.txt",\
-                 "data/rand10000.txt",\
-                 "data/rand100000.txt",\
-                 "data/rand250000.txt",\
-                 "data/rand500000.txt",\
-                 "data/rand1000000.txt"]
+    testFiles = [ "data/rand1000.txt",\
+                  "data/rand10000.txt",\
+                  "data/rand100000.txt",\
+                  "data/rand250000.txt",\
+                  "data/rand500000.txt",\
+                  "data/rand1000000.txt",\
+                  "data/random_integers_10M.txt"\
+                ]
 
 
     while True:
@@ -75,11 +77,11 @@ if __name__ == "__main__":
 
             # variables
             k_min = 2
-            k_max = 200
-            interval = 10
-            k_iterations = 3
+            k_max = 15
+            interval = 1
+            k_iterations = 10
 
-            # iterate through each k (2 - 20)
+            # iterate through each k
             for k in range( k_min, k_max, interval ):
                 duration = 0
                 # run each k 10 times and get the average time
