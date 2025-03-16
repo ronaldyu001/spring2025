@@ -3,13 +3,13 @@ from functions import*
 
 if __name__ == "__main__":
     # data sets provided
-    testFiles = [ "data/rand1000.txt",\
-                  "data/rand10000.txt",\
-                  "data/rand100000.txt",\
-                  "data/rand250000.txt",\
-                  "data/rand500000.txt",\
-                  "data/rand1000000.txt",\
-                  "data/random_integers_10M.txt"\
+    testFiles = [ "./data/rand1000.txt",\
+                  "./data/rand10000.txt",\
+                  "./data/rand100000.txt",\
+                  "./data/rand250000.txt",\
+                  "./data/rand500000.txt",\
+                  "./data/rand1000000.txt",\
+                  "./data/random_integers_10M.txt"\
                 ]
 
 
@@ -36,7 +36,7 @@ if __name__ == "__main__":
         elif user_input == 1:
             # read input file into an array
             array_1 = readFile( testFiles[ 5 ] )
-            array_2 = array_1
+            array_2 = readFile( testFiles[ 5 ] )
 
             # build max heap iterable
             print( f'ITERABLE' )
@@ -59,15 +59,23 @@ if __name__ == "__main__":
 
             # quicksort
             print( f'\nQUICKSORT: ' )
+            start_time = time.time()
             quicksort( array_1, 0, len( array_1 ) - 1 )
+            end_time = time.time()
+            duration = end_time - start_time
             # write_array_to_file( array_1, 'output_1')
             print( f'Sorted: { is_sorted( array_1 ) }' )
+            print( f'Duration: {duration}' )
 
             # optimized bubble sort
             print( f'\nOPTIMIZED BUBBLE SORT: ' )
+            start_time = time.time()
             bubblesort_optimized( array_2 )
+            end_time = time.time()
+            duration = end_time - start_time
             # write_array_to_file( array_2, 'output_2' )
             print( f'Sorted: { is_sorted( array_2 ) }' )
+            print( f'Duration: {duration}' )
 
 
         # option 3 (Hybrid Sort and Data Visualization)
@@ -77,9 +85,9 @@ if __name__ == "__main__":
 
             # variables
             k_min = 2
-            k_max = 15
-            interval = 1
-            k_iterations = 10
+            k_max = 200
+            interval = 10
+            k_iterations = 3
 
             # iterate through each k
             for k in range( k_min, k_max, interval ):

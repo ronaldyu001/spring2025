@@ -61,8 +61,8 @@ def maxHeapify_iterable( array, index ):
     # keep running until heap property is restored
     while True:
         # variables
-        parent = index
-        largest = parent    # assume parent is the largest
+        largest = index
+        # largest = parent    # assume parent is the largest
         left_child = index * 2 + 1
         right_child = index * 2 + 2
 
@@ -74,16 +74,15 @@ def maxHeapify_iterable( array, index ):
         if right_child < len( array ) and array[ right_child ] > array[ largest ]:
             largest = right_child
 
-        # if parent is already largest, break
-        if parent == largest:
+        # if index (parent) is not the largest
+        if largest != index:
+            # swap parent and largest
+            array[ index ], array[ largest ] = array[ largest ], array[ index ]
+            index = largest
+
+        else:
             break
-
-        # swap parent and largest
-        array[ parent ], array[ largest ] = array[ largest ], array[ parent ]
-
-        # move down heap
-        index = largest
-
+        
 
 # build max heap
 @timeEfficiencyDecorator
@@ -92,22 +91,6 @@ def build_max_heap_iterable( array ):
     # Start from the last non-leaf node and heapify each node
     for i in range( n // 2 - 1, -1, -1 ):
         maxHeapify_iterable( array , i)
-
-
-# verify max heap (checks if build max heap works)
-def verify_max_heap( array ):
-    n = len( array )
-    for i in range( n // 2 ):  # Only need to check the non-leaf nodes
-        left = 2 * i + 1
-        right = 2 * i + 2
-        # Check if the current node is greater than or equal to both children
-        if left < n and array[ i ] < array[ left ]:
-            print( f'{ i  }: { array[ left ] } greater than { array[ i ] } ')
-            return False
-        if right < n and array[ i ] < array[ right ]:
-            print(f'{ i }: { array[ right ] } greater than { array [ i ] }')
-            return False
-    return True
 
 
 # max heapify (recursive)
@@ -141,6 +124,23 @@ def write_array_to_file( array, filename ):
         # Write each element of the array on a new line
         for element in array:
             file.write( str( element ) + '\n' )
+
+
+# verify max heap (checks if build max heap works)
+def verify_max_heap( array ):
+    n = len( array )
+    for i in range( n // 2 ):  # Only need to check the non-leaf nodes
+        left = 2 * i + 1
+        right = 2 * i + 2
+        # Check if the current node is greater than or equal to both children
+        if left < n and array[ i ] < array[ left ]:
+            print( f'{ i  }: { array[ left ] } greater than { array[ i ] } ')
+            return False
+        if right < n and array[ i ] < array[ right ]:
+            print(f'{ i }: { array[ right ] } greater than { array [ i ] }')
+            return False
+    return True
+
 
 #--------------------
 #   QUESTION 3.2
@@ -181,7 +181,7 @@ def quicksort( array, low, high ):
 
 # optimized bubble sort
 def bubblesort_optimized( array ):
-    # 
+    # variables
     array_size = len( array ) - 1
  
     # iterate 'number of elements in array' times
@@ -223,3 +223,9 @@ def hybridsort( array, low, high, k ):
             pivot = quicksort_partition( array, low, high )
             quicksort( array, low, pivot - 1)
             quicksort( array, pivot + 1, high )
+
+# wrapper decorator
+def wrapper_decorator(func):
+    def wrapper(args, **kwargs):
+        func(args, **kwargs)
+    return wrapper
