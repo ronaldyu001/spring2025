@@ -54,7 +54,7 @@ if __name__ == "__main__":
         # option 2 (Quicksort and Optimizing Bubble Sort)
         elif user_input == 2:
             # read input file into an array
-            array_1 = readFile( testFiles[ 0 ] )
+            array_1 = readFile( testFiles[ 5 ] )
             array_2 = array_1
 
             # quicksort
@@ -85,9 +85,9 @@ if __name__ == "__main__":
 
             # variables
             k_min = 2
-            k_max = 200
-            interval = 10
-            k_iterations = 3
+            k_max = 10
+            interval = 1
+            k_iterations = 10
 
             # iterate through each k
             for k in range( k_min, k_max, interval ):
@@ -97,7 +97,7 @@ if __name__ == "__main__":
                     # print k values
                     print( f'k = { k }' )
                     # read data into array
-                    array_3 = readFile( testFiles[ 5 ])
+                    array_3 = readFile( testFiles[ 4 ])
                     duration += hybridsort( array_3, 0, len( array_3 ) - 1, k )
                     # write_array_to_file( array_2, 'output_3' )
                     # print( f'Sorted: { is_sorted( array_3 ) }' )

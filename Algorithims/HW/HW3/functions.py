@@ -184,14 +184,15 @@ def bubblesort_optimized( array ):
     # variables
     array_size = len( array ) - 1
  
-    # iterate 'number of elements in array' times
+    # iterate for each element in array except last
     for i in range( array_size ):
+        # initialize swapped flag to false
         swapped = False
 
         # for each element in array, not including those already sorted
         for j in range( array_size - i ):
 
-            # if the element is larger than the next, swap
+            # if the element is larger than the next, swap. set swapped flag to true
             if array[ j ] > array[ j + 1 ]:
                 array[ j ], array[ j + 1 ] = array[ j + 1 ], array[ j ]
                 swapped = True
@@ -214,18 +215,34 @@ def is_sorted( array ):
 def hybridsort( array, low, high, k ):
     # 
     if low < high:
-        # 
+        # subarray size less than k
         if high - low + 1 < k:
-            bubblesort_optimized( array )
+            bubblesort_optimized_hybrid( array, low, high )
 
-        # 
+        # subarray size greater than or equal to k
         else:
             pivot = quicksort_partition( array, low, high )
             quicksort( array, low, pivot - 1)
             quicksort( array, pivot + 1, high )
 
-# wrapper decorator
-def wrapper_decorator(func):
-    def wrapper(args, **kwargs):
-        func(args, **kwargs)
-    return wrapper
+
+def bubblesort_optimized_hybrid( array, low, high ):
+    # variables
+    array_size = len( array ) - 1
+ 
+    # iterate for each element in array except last
+    for i in range( low, high ):
+        # initialize swapped flag to false
+        swapped = False
+
+        # for each element in array, not including those already sorted
+        for j in range( low, high ):
+
+            # if the element is larger than the next, swap. set swapped flag to true
+            if array[ j ] > array[ j + 1 ]:
+                array[ j ], array[ j + 1 ] = array[ j + 1 ], array[ j ]
+                swapped = True
+
+        # if no swap, largest element sorted for this iteration, stop early and go to next iteration
+        if not swapped:
+            break
