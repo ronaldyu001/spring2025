@@ -197,7 +197,7 @@ def bubblesort_optimized( array ):
                 array[ j ], array[ j + 1 ] = array[ j + 1 ], array[ j ]
                 swapped = True
 
-        # if no swap, largest element sorted for this iteration, stop early and go to next iteration
+        # if no swaps, the array is already sorted
         if not swapped:
             break
 
@@ -222,8 +222,8 @@ def hybridsort( array, low, high, k ):
         # subarray size greater than or equal to k
         else:
             pivot = quicksort_partition( array, low, high )
-            quicksort( array, low, pivot - 1)
-            quicksort( array, pivot + 1, high )
+            quicksort( array, low, pivot - 1, k)
+            quicksort( array, pivot + 1, high , k)
 
 
 def bubblesort_optimized_hybrid( array, low, high ):
