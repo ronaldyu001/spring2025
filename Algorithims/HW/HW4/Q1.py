@@ -48,8 +48,21 @@ def bucket_sort( arr ):
     # sort each bucket using INSERTION SORT
     for bucket in buckets:
         insertion_sort( bucket )
+        print( bucket )
 
 
 # INSERTION SORT
 def insertion_sort( arr ):
-    print()
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+
+        # Move elements of arr[0..i-1] that are greater than key
+        # to one position ahead of their current position
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+
+        arr[j + 1] = key
+
+    return arr

@@ -40,12 +40,12 @@ if __name__ == "__main__":
             sublists = split_list( readFile(testFiles[5]), 100 )
 
             # use radix/counting sort for first 50 sublists
-
+            radix_sublists = sublists[:50]
 
             # use bucketsort for second 50 sublists
             bucket_sublists = sublists[50::]
             for arr in bucket_sublists:
-                print(bucket_sort( arr ))
+                bucket_sort( arr )
 
 
         # 2: Skiplist Performance
