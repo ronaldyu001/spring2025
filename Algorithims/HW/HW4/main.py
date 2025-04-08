@@ -48,7 +48,8 @@ if __name__ == "__main__":
                 bucket_sublists[ i ] = bucket_sort( bucket_sublists[ i ] )
 
             # merge and sort the sorted sublists
-            merge_and_sort( bucket_sublists, 50)
+            sorted = merge_and_sort( bucket_sublists, 50 )
+            print( sorted )
 
 
         # 2: Skiplist Performance
