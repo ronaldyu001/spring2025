@@ -36,16 +36,19 @@ if __name__ == "__main__":
 
         # 1: Merging k Sorted Lists
         elif user_input == 1:
-            # split into sublists
+            # split into 100 sublists
             sublists = split_list( readFile(testFiles[5]), 100 )
 
             # use radix/counting sort for first 50 sublists
             radix_sublists = sublists[:50]
 
             # use bucketsort for second 50 sublists
-            bucket_sublists = sublists[50::]
-            for arr in bucket_sublists:
-                bucket_sort( arr )
+            bucket_sublists = sublists[50:]
+            for i in range( len(bucket_sublists) ):
+                bucket_sublists[ i ] = bucket_sort( bucket_sublists[ i ] )
+
+            # merge and sort the sorted sublists
+            merge_and_sort( bucket_sublists, 50)
 
 
         # 2: Skiplist Performance
