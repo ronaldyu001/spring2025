@@ -1,8 +1,11 @@
 from functions import*
 
+
 """
 This file contains functions used for Q1.
 """
+
+
 #
 #   SPLIT LIST
 #
@@ -185,7 +188,7 @@ class MinHeap():
         # swap root (smallest value) and last element
         self.heap[ 0 ], self.heap[ -1 ] = self.heap[ -1 ], self.heap[ 0 ]
 
-        # return the smallest element
+        # return the smallest element and min heapify root
         min_value = self.heap.pop()
         self.min_heapify( 0 )
         return min_value
