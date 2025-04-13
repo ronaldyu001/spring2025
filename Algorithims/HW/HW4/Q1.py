@@ -26,10 +26,53 @@ def split_list( arr, num_of_sublists ):
 
 
 #
-#   RADIX/COUNTING SORT
+#   RADIX SORT
 #
-def radix_counting_sort():
-    print()
+def radix_sort( arr ):
+    # variables
+    max_value = max( arr )
+    digit = 1
+
+    # if array empty print error
+    if not arr:
+        print( 'array is empty.' )
+        return arr
+    
+    # process each digit from least to most significant
+    while max_value // digit > 0:
+        counting_sort( arr, digit )
+        digit *= 10
+
+    return arr
+
+
+#
+#   COUNTING SORT
+#
+def counting_sort( arr, digit ):
+    # variables
+    length = len( arr )
+    counts = [0] * 10
+    output = [0] * length
+
+    # count frequency of each number
+    for number in arr:
+        index = ( number // digit ) % 10
+        counts[ index ] += 1
+
+    # get cumalative count
+    for i in range( 1, 10 ):
+        counts[ i ] = counts[ i - 1 ]
+
+    # make output array
+    for i in range( length - 1, -1, -1 ):
+        index = ( arr[i] // digit ) % 10
+        output[ counts[index] - 1 ] = arr[ i ]
+        counts[ index ] -= 1
+
+    # copy output array to arr
+    for i in range( length ):
+        arr[ i ] = output[ i ]
 
 
 #
@@ -90,8 +133,9 @@ def insertion_sort( arr ):
 
 
 #
-#   MERGE AND SORT SORTED SUBLISTS
+#   MERGE AND SORT O(nlogk)
 #
+@timeEfficiencyDecorator
 def merge_and_sort( arr, num_of_arrs ):
     # variables
     min_heap = MinHeap( num_of_arrs )
@@ -192,3 +236,33 @@ class MinHeap():
         min_value = self.heap.pop()
         self.min_heapify( 0 )
         return min_value
+
+
+#
+#   MERGE AND SORT O(nk)
+#
+@timeEfficiencyDecorator
+def merge_and_sort_nk( arr, num_of_arrs ):
+    # variables
+    sorted = []
+    index_tracker = [1] * len(arr)
+
+    # merge and sort
+    while True:
+        # variables
+        min_value = float('inf')
+        min_index = -1
+
+        for i in range( len(arr) ):
+            if index_tracker[ i ] < len( arr[i] ):
+                if arr[ i ][ index_tracker[i] ] < min_value:
+                    min_value = arr[ i ][ index_tracker[i] ]
+                    min_index = i
+
+        if min_index == -1:
+            break
+
+        sorted.append( min_value )
+        index_tracker[ min_index ] += 1
+
+    return sorted

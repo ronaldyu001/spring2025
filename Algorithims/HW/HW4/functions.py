@@ -3,6 +3,7 @@ import random
 import matplotlib
 import matplotlib.pyplot as plt
 from pathlib import Path
+import pandas
 
 
 """
@@ -76,6 +77,21 @@ def array_to_text_file( arr, filename ):
 
 
 #
+#   PRINT ARRAYS TO FILE
+#
+"""
+Example Input: [ [1, 2, 3], [4, 5, 6] ]
+Example Outut: 1\n4\n\n2\n5\n\n3\n6\n\n
+"""
+def arrays_to_text_file( arrs, filename ):
+    with open( filename, 'w' ) as f:
+        for i in range( len(arrs[0]) ):
+            for arr in arrs:
+                f.write( f'{arr[i]}\n' )
+            f.write( f'\n' )
+
+
+#
 # CHECK IF ARRAY IS SORTED
 #
 def is_sorted( array ):
@@ -122,3 +138,18 @@ def plot_bar_graph( title, ylabel, xlabel, values, xlabels ):
     # 
     plt.tight_layout()
     plt.show()
+
+
+#
+#   CONVERT ARRAYS TO HTML TABLE
+#
+def arrs_to_html_table( arr, column_labels, destination ):
+    # convert array to pandas data frame
+    data = pandas.DataFrame( arr, columns=column_labels )
+
+    # convert pandas data frame to html table
+    html_table = data.to_html( index=False )
+
+    # save html
+    with open( destination, 'w' ) as file:
+        file.write( html_table )

@@ -1,0 +1,440 @@
+CSCI 1001
+Computer Forensics I
+(3 Credits)
+N/A
+
+CSCI 1200
+Fundamentals of Engineering Design Innovation
+(3 Credits)
+N/A
+
+CSCI 1350
+Introduction to Computing in Society
+(3 Credits)
+N/A
+
+CSCI 1410
+Fundamentals of Computing
+(3 Credits)
+N/A
+
+CSCI 1411
+Fundamentals of Computing Laboratory
+(1 Credit)
+N/A
+
+CSCI 1510
+Logic Design
+(3 Credits)
+N/A
+
+CSCI 1800
+Special Topics
+(1-3 Credits)
+N/A
+
+CSCI 2002
+Computer Forensics II
+(3 Credits)
+CSCI 1001    
+
+CSCI 2132
+Circuits and Electronics
+(3 Credits)
+CSCI 1510    MATH 2411    PHYS 2331    
+
+CSCI 2312
+Object Oriented Programming
+(3 Credits)
+CSCI 1410    CSCI 1411    
+
+CSCI 2421
+Data Structures and Program Design
+(3 Credits)
+CSCI 2312    
+
+CSCI 2511
+Discrete Structures
+(3 Credits)
+MATH 1401    
+
+CSCI 2525
+Assembly Language and Computer Organization
+(3 Credits)
+N/A
+
+CSCI 2571
+Fundamentals of UNIX
+(3 Credits)
+N/A
+
+CSCI 2800
+Special Topics
+(3 Credits)
+N/A
+
+CSCI 2940
+NAND to Tetris: Foundations of Computer Systems
+(3 Credits)
+CSCI 1410    CSCI 1411    
+
+CSCI 2941
+Game Design and Development I
+(3 Credits)
+CSCI 1410    CSCI 1411    
+
+CSCI 2942
+IoT: The Internet of Things
+(3 Credits)
+CSCI 1410    CSCI 1411    
+
+CSCI 2980
+Foundations of Data Science
+(3 Credits)
+N/A
+
+CSCI 3287
+Database System Concepts
+(3 Credits)
+ENGL 1020    CSCI 2312    CSCI 2421    
+
+CSCI 3310
+App Development for Mobile Devices
+(3 Credits)
+CSCI 2312    CSCI 2421    
+
+CSCI 3320
+Advanced Programming
+(3 Credits)
+CSCI 2421    
+
+CSCI 3412
+Algorithms
+(3 Credits)
+CSCI 2312    CSCI 2421    CSCI 2511    
+
+CSCI 3415
+Principles of Programming Languages
+(3 Credits)
+CSCI 2312    CSCI 2421    CSCI 2525    
+
+CSCI 3453
+Operating System Concepts
+(3 Credits)
+CSCI 3412    CSCI 2525    
+
+CSCI 3508
+Introduction to Software Engineering
+(3 Credits)
+CSCI 3412    
+
+CSCI 3511
+Hardware-Software Interface
+(3 Credits)
+CSCI 2525    
+
+CSCI 3515
+Internet of Things: Sensing, Communication & Control
+(3 Credits)
+CSCI 2312    CSCI 2421    
+
+CSCI 3560
+Probability and Computing
+(3 Credits)
+CSCI 2511    MATH 2411    
+
+CSCI 3740
+Computer Security
+(3 Credits)
+CSCI 2312    CSCI 2421    
+
+CSCI 3751
+Fundamentals of UNIX
+(3 Credits)
+CSCI 2312    CSCI 2421    
+
+CSCI 3761
+Introduction to Computer Networks
+(3 Credits)
+CSCI 2312    CSCI 2421    
+
+CSCI 3762
+Network Programming
+(3 Credits)
+CSCI 3761    
+
+CSCI 3800
+Special Topics
+(3 Credits)
+N/A
+
+CSCI 3810
+Special Topics
+(3 Credits)
+N/A
+
+CSCI 3840
+Independent Study: CSCI
+(1-3 Credits)
+N/A
+
+CSCI 3910
+Web Development with PHP and MySQL Database
+(3 Credits)
+CSCI 3287    
+
+CSCI 3916
+Web API
+(3 Credits)
+CSCI 2312    CSCI 2421    
+
+CSCI 3920
+Advanced Programming with Java and Python
+(3 Credits)
+CSCI 2312    CSCI 2421    
+
+CSCI 3963
+Network Structures
+(3 Credits)
+MATH 2411    
+
+CSCI 4034
+Theoretical Foundations of Computer Science
+(3 Credits)
+CSCI 3412    
+
+CSCI 4110
+Applied Number Theory
+(3 Credits)
+MATH 3000    CSCI 2511    
+
+CSCI 4172
+Complexity and Problem Solving
+(3 Credits)
+CSCI 4034    
+
+CSCI 4173
+Computational Complexity and Problem Solving
+(3 Credits)
+CSCI 4034    
+
+CSCI 4202
+Introduction to Artificial Intelligence
+(3 Credits)
+CSCI 3412    
+
+CSCI 4203
+Simulation
+(3 Credits)
+CSCI 3412    
+
+CSCI 4211
+Mobile Computing and Programming
+(3 Credits)
+CSCI 3453    
+
+CSCI 4220
+Social Networks & Informatics
+(3 Credits)
+CSCI 3412    
+
+CSCI 4287
+Embedded Systems Programming
+(3 Credits)
+CSCI 3453    
+
+CSCI 4407
+Security & Cryptography
+(3 Credits)
+CSCI 3412    
+
+CSCI 4408
+Applied Graph Theory
+(3 Credits)
+MATH 3000    CSCI 2511    
+
+CSCI 4411
+Computational Geometry
+(3 Credits)
+CSCI 3412    
+
+CSCI 4455
+Data Mining
+(3 Credits)
+CSCI 3287    CSCI 3412    MATH 3191    MATH 3195    
+
+CSCI 4501
+Java
+(3 Credits)
+CSCI 2421    
+
+CSCI 4551
+Parallel & Distributed Computing
+(3 Credits)
+CSCI 3195    MATH 3191    MATH 3200    CSCI 3415    CSCI 3453    
+
+CSCI 4555
+Compiler Design
+(3 Credits)
+CSCI 3412    CSCI 3415    
+
+CSCI 4565
+Introduction to Computer Graphics
+(3 Credits)
+N/A
+
+CSCI 4570
+Virtual and Augmented Reality
+(3 Credits)
+CSCI 3412    
+
+CSCI 4580
+Data Science
+(3 Credits)
+CSCI 3287    CSCI 3412    MATH 3195    MATH 3191    
+
+CSCI 4591
+Computer Architecture
+(3 Credits)
+CSCI 2525    
+
+CSCI 4620
+Computational Motor Control
+(3 Credits)
+CSCI 3412    
+
+CSCI 4625
+Computer Vision
+(3 Credits)
+CSCI 3412    MATH 3191    MATH 3195    
+
+CSCI 4630
+Linguistic Geometry
+(3 Credits)
+CSCI 3412    
+
+CSCI 4640
+Universal Compiler: Theory and Construction
+(3 Credits)
+CSCI 3453    
+
+CSCI 4650
+Numerical Analysis I
+(3 Credits)
+MATH 3191    MATH 3195    
+
+CSCI 4660
+Numerical Analysis II
+(3 Credits)
+MATH 3195    MATH 3191    MATH 3200    CSCI 4650    CSCI 5660    
+
+CSCI 4702
+Big Data Mining
+(3 Credits)
+CSCI 3287    CSCI 3412    MATH 3191    MATH 3195    
+
+CSCI 4738
+Senior Design I
+(3 Credits)
+CSCI 3287    CSCI 3415    CSCI 3453    CSCI 3508    
+
+CSCI 4739
+Senior Design II
+(3 Credits)
+CSCI 4738    
+
+CSCI 4741
+Principles of Cybersecurity
+(3 Credits)
+CSCI 3761    
+
+CSCI 4742
+Cybersecurity Programming and Analysis
+(3 Credits)
+CSCI 3415    
+
+CSCI 4743
+Cyber and Infrastructure Defense
+(3 Credits)
+CSCI 3761    
+
+CSCI 4771
+Introduction to Mobile Computing
+(3 Credits)
+CSCI 3453    CSCI 3761    
+
+CSCI 4772
+Mobile and IoT Security
+(3 Credits)
+CSCI 3453    CSCI 3761    
+
+CSCI 4773
+Introduction to Emerging System Security
+(3 Credits)
+CSCI 3453    CSCI 3761    
+
+CSCI 4788
+Bioinformatics
+(3 Credits)
+CSCI 3412    MATH 3195    CSCI 3191    
+
+CSCI 4799
+Cloud Computing
+(3 Credits)
+CSCI 3761    CSCI 3453    
+
+CSCI 4800
+Special Topics
+(3 Credits)
+N/A
+
+CSCI 4810
+Special Topics
+(3 Credits)
+N/A
+
+CSCI 4840
+Independent Study
+(3 Credits)
+N/A
+
+CSCI 4866
+Advanced Mobile and Ubiquitous Systems
+(3 Credits)
+CSCI 3453    CSCI 3761    
+
+CSCI 4910
+User Experience Design
+(3 Credits)
+CSCI 2421    
+
+CSCI 4920
+Computer Game Design and Programming
+(3 Credits)
+CSCI 3412    
+
+CSCI 4929
+Internship
+(3 Credits)
+CSCI 3508    
+
+CSCI 4930
+Machine Learning
+(3 Credits)
+CSCI 3412    MATH 3195    CSCI 3191    
+
+CSCI 4931
+Deep Learning
+(3 Credits)
+CSCI 3412    MATH 3195    CSCI 3191    
+
+CSCI 4939
+Internship
+(3 Credits)
+N/A
+
+CSCI 4951
+Big Data Systems
+(3 Credits)
+CSCI 3287    CSCI 3412    MATH 3191    MATH 3195    
+
