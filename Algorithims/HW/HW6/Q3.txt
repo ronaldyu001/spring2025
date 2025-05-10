@@ -1,0 +1,5 @@
+In the study, “Microkernel-Based Web Architecture: Design & Implementation Considerations” by Vick Dini, he proposes a web architecture that utilizes the microkernel design to platform a “Multi-Paradigm Modular Web System.” 
+The architecture flexibly considers module implementations that follow monolithic, Service-Oriented Architecture (SOA), or microservice architectures. 
+Dini attempts to resolve several challenges that have arisen with the usage of microservices in this paper. 
+His theorized microkernel would possess the following services: Dispatcher, Debugger, Monitor, Service Manager, Scheduler, Inter-Service Communication, and Memory Manager. 
+These services supply the necessary minimum operations to run as a kernel but additionally include support for web services.
