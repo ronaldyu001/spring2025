@@ -241,7 +241,6 @@ NY         Boston  .................... 306
 
 ## Console Output
 
-
 ---
 
    HW 6:
