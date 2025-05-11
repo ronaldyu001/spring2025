@@ -125,10 +125,10 @@ def Dijkstra( graph, start ):
             distance = current_weight + weight
            
             if distance < distances[ neighbor ]:
-                print( f'    Relaxed: vertex( {neighbor} ): Old ( {distances[neighbor]} ), New ( {distance} ), Paths {paths}' )
                 distances[ neighbor ] = distance
                 paths[ neighbor ] = current_node    # update paths
                 heapq.heappush( heap, (distance, neighbor) )
+                print( f'    Relaxed: vertex( {neighbor} ): Old ( {distances[neighbor]} ), New ( {distance} ), Paths {paths}' )
 
             else:
                print( f'    No edge relaxation is needed for Node( {neighbor} )' )

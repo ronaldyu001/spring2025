@@ -74,98 +74,99 @@ Shortest Distance to Each Node:
    HW 6:
    0) Exit
 
-1) Dijkstras Algorithm
-2) 
+1) Dijkstras
+2) MST
+3) Zip
 
 ---
 
 Enter menu choice: 2
 
 Node( Denver ) with Weight( 0 ) is added to the Visited( {'Denver'} )
-    Relaxed: vertex( Boston ): Old ( inf ), New ( 2839 ), Paths {}
-    Relaxed: vertex( Chicago ): Old ( inf ), New ( 1474 ), Paths {'Boston': 'Denver'}
-    Relaxed: vertex( Dallas ): Old ( inf ), New ( 1064 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver'}
-    Relaxed: vertex( LA ): Old ( inf ), New ( 1335 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver'}
-    Relaxed: vertex( Memphis ): Old ( inf ), New ( 1411 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver'}
-    Relaxed: vertex( W DC ): Old ( inf ), New ( 2395 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver'}
+    Relaxed: vertex( Boston ): Old ( 2839 ), New ( 2839 ), Paths {'Boston': 'Denver'}
+    Relaxed: vertex( Chicago ): Old ( 1474 ), New ( 1474 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver'}
+    Relaxed: vertex( Dallas ): Old ( 1064 ), New ( 1064 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver'}
+    Relaxed: vertex( LA ): Old ( 1335 ), New ( 1335 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver'}
+    Relaxed: vertex( Memphis ): Old ( 1411 ), New ( 1411 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver'}
+    Relaxed: vertex( W DC ): Old ( 2395 ), New ( 2395 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver'}
 
-Node( Dallas ) with Weight( 1064 ) is added to the Visited( {'Dallas', 'Chicago', 'Boston', 'W DC', 'Memphis', 'LA', 'Denver'} )
-    Relaxed: vertex( Atlanta ): Old ( inf ), New ( 2221 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver'}
+Node( Dallas ) with Weight( 1064 ) is added to the Visited( {'W DC', 'LA', 'Boston', 'Memphis', 'Dallas', 'Chicago', 'Denver'} )
+    Relaxed: vertex( Atlanta ): Old ( 2221 ), New ( 2221 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas'}
     No edge relaxation is needed for Node( Denver )
-    Relaxed: vertex( Houston ): Old ( inf ), New ( 1426 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas'}
+    Relaxed: vertex( Houston ): Old ( 1426 ), New ( 1426 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas'}
     No edge relaxation is needed for Node( Memphis )
-    Relaxed: vertex( Phoenix ): Old ( inf ), New ( 2486 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas'}
+    Relaxed: vertex( Phoenix ): Old ( 2486 ), New ( 2486 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas'}
     No edge relaxation is needed for Node( W DC )
 
-Node( LA ) with Weight( 1335 ) is added to the Visited( {'Dallas', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( LA ) with Weight( 1335 ) is added to the Visited( {'W DC', 'LA', 'Boston', 'Memphis', 'Dallas', 'Chicago', 'Houston', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Denver )
     No edge relaxation is needed for Node( Houston )
-    Relaxed: vertex( Miami ): Old ( inf ), New ( 5090 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas'}
-    Relaxed: vertex( NY ): Old ( inf ), New ( 5268 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA'}
-    Relaxed: vertex( SF ): Old ( inf ), New ( 1894 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA', 'NY': 'LA'}
-    Relaxed: vertex( Seattle ): Old ( inf ), New ( 2879 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA', 'NY': 'LA', 'SF': 'LA'}
+    Relaxed: vertex( Miami ): Old ( 5090 ), New ( 5090 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA'}
+    Relaxed: vertex( NY ): Old ( 5268 ), New ( 5268 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA', 'NY': 'LA'}
+    Relaxed: vertex( SF ): Old ( 1894 ), New ( 1894 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA', 'NY': 'LA', 'SF': 'LA'}
+    Relaxed: vertex( Seattle ): Old ( 2879 ), New ( 2879 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA', 'NY': 'LA', 'SF': 'LA', 'Seattle': 'LA'}
 
-Node( Memphis ) with Weight( 1411 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( Memphis ) with Weight( 1411 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Dallas )
     No edge relaxation is needed for Node( Denver )
-    Relaxed: vertex( Philly ): Old ( inf ), New ( 2824 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA', 'NY': 'LA', 'SF': 'LA', 'Seattle': 'LA'}
+    Relaxed: vertex( Philly ): Old ( 2824 ), New ( 2824 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA', 'NY': 'LA', 'SF': 'LA', 'Seattle': 'LA', 'Philly': 'Memphis'}
 
-Node( Houston ) with Weight( 1426 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Philly', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( Houston ) with Weight( 1426 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Philly', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Dallas )
     No edge relaxation is needed for Node( LA )
 
-Node( Chicago ) with Weight( 1474 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Philly', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( Chicago ) with Weight( 1474 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Philly', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Boston )
     No edge relaxation is needed for Node( Denver )
-    Relaxed: vertex( NY ): Old ( 5268 ), New ( 2619 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA', 'NY': 'LA', 'SF': 'LA', 'Seattle': 'LA', 'Philly': 'Memphis'}
+    Relaxed: vertex( NY ): Old ( 2619 ), New ( 2619 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA', 'NY': 'Chicago', 'SF': 'LA', 'Seattle': 'LA', 'Philly': 'Memphis'}
     No edge relaxation is needed for Node( Phoenix )
 
-Node( SF ) with Weight( 1894 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Philly', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( SF ) with Weight( 1894 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Philly', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Atlanta )
     No edge relaxation is needed for Node( LA )
     No edge relaxation is needed for Node( Seattle )
 
-Node( Atlanta ) with Weight( 2221 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Philly', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( Atlanta ) with Weight( 2221 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Philly', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Boston )
     No edge relaxation is needed for Node( Dallas )
-    Relaxed: vertex( Miami ): Old ( 5090 ), New ( 3194 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'LA', 'NY': 'Chicago', 'SF': 'LA', 'Seattle': 'LA', 'Philly': 'Memphis'}
+    Relaxed: vertex( Miami ): Old ( 3194 ), New ( 3194 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'Atlanta', 'NY': 'Chicago', 'SF': 'LA', 'Seattle': 'LA', 'Philly': 'Memphis'}
     No edge relaxation is needed for Node( SF )
 
-Node( W DC ) with Weight( 2395 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Philly', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( W DC ) with Weight( 2395 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Philly', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Dallas )
     No edge relaxation is needed for Node( Denver )
     No edge relaxation is needed for Node( Miami )
-    Relaxed: vertex( Philly ): Old ( 2824 ), New ( 2594 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'Atlanta', 'NY': 'Chicago', 'SF': 'LA', 'Seattle': 'LA', 'Philly': 'Memphis'}
+    Relaxed: vertex( Philly ): Old ( 2594 ), New ( 2594 ), Paths {'Boston': 'Denver', 'Chicago': 'Denver', 'Dallas': 'Denver', 'LA': 'Denver', 'Memphis': 'Denver', 'W DC': 'Denver', 'Atlanta': 'Dallas', 'Houston': 'Dallas', 'Phoenix': 'Dallas', 'Miami': 'Atlanta', 'NY': 'Chicago', 'SF': 'LA', 'Seattle': 'LA', 'Philly': 'W DC'}
 
-Node( Phoenix ) with Weight( 2486 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Philly', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( Phoenix ) with Weight( 2486 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Philly', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Chicago )
     No edge relaxation is needed for Node( Dallas )
     No edge relaxation is needed for Node( Miami )
     No edge relaxation is needed for Node( NY )
     No edge relaxation is needed for Node( Philly )
 
-Node( Philly ) with Weight( 2594 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Philly', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( Philly ) with Weight( 2594 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Philly', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Memphis )
     No edge relaxation is needed for Node( Phoenix )
     No edge relaxation is needed for Node( W DC )
 
-Node( NY ) with Weight( 2619 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Philly', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( NY ) with Weight( 2619 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Philly', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Boston )
     No edge relaxation is needed for Node( Chicago )
     No edge relaxation is needed for Node( LA )
     No edge relaxation is needed for Node( Phoenix )
 
-Node( Boston ) with Weight( 2839 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Philly', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( Boston ) with Weight( 2839 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Philly', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Atlanta )
     No edge relaxation is needed for Node( Chicago )
     No edge relaxation is needed for Node( Denver )
     No edge relaxation is needed for Node( NY )
 
-Node( Seattle ) with Weight( 2879 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Philly', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( Seattle ) with Weight( 2879 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Philly', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( LA )
     No edge relaxation is needed for Node( SF )
 
-Node( Miami ) with Weight( 3194 ) is added to the Visited( {'Dallas', 'NY', 'Chicago', 'Boston', 'W DC', 'Atlanta', 'Phoenix', 'Miami', 'Seattle', 'SF', 'Philly', 'Memphis', 'LA', 'Houston', 'Denver'} )
+Node( Miami ) with Weight( 3194 ) is added to the Visited( {'W DC', 'Seattle', 'LA', 'Boston', 'Miami', 'NY', 'Memphis', 'Dallas', 'Chicago', 'SF', 'Houston', 'Philly', 'Phoenix', 'Atlanta', 'Denver'} )
     No edge relaxation is needed for Node( Atlanta )
     No edge relaxation is needed for Node( LA )
     No edge relaxation is needed for Node( Phoenix )
@@ -223,7 +224,6 @@ Dallas     Phoenix .................... 1422
 Denver     Chicago .................... 1474
 Chicago    NY      .................... 1145
 NY         Boston  .................... 306
-
 
 # Q3
 
