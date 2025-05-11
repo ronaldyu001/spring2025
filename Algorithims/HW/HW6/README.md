@@ -6,44 +6,46 @@
 
 ## Dijkstra's Output:
 
+
 ---
 
    HW 6:
    0) Exit
 
-1) Dijkstras Algorithm
-2) 
+1) Dijkstras
+2) MST
+3) Zip
 
 ---
 
 Enter menu choice: 1
 Graph Info:
-   Nodes: {'B', 'E', 'A', 'D', 'C'}
+   Nodes: {'B', 'C', 'A', 'E', 'D'}
    Edges: defaultdict(<class 'list'>, {'A': ['B', 'C'], 'B': ['C', 'D', 'E'], 'C': ['B', 'D', 'E'], 'E': ['D']})
    Distances: {('A', 'B'): 4, ('A', 'C'): 2, ('B', 'C'): 3, ('B', 'D'): 2, ('B', 'E'): 3, ('C', 'B'): 1, ('C', 'D'): 4, ('C', 'E'): 5, ('E', 'D'): 1}
 
 Node( A ) with Weight( 0 ) is added to the Visited( {'A'} )
-    Relaxed: vertex( B ): Old ( inf ), New ( 4 ), Paths {}
-    Relaxed: vertex( C ): Old ( inf ), New ( 2 ), Paths {'B': 'A'}
+    Relaxed: vertex( B ): Old ( 4 ), New ( 4 ), Paths {'B': 'A'}
+    Relaxed: vertex( C ): Old ( 2 ), New ( 2 ), Paths {'B': 'A', 'C': 'A'}
 
-Node( C ) with Weight( 2 ) is added to the Visited( {'B', 'A', 'C'} )
-    Relaxed: vertex( B ): Old ( 4 ), New ( 3 ), Paths {'B': 'A', 'C': 'A'}
-    Relaxed: vertex( D ): Old ( inf ), New ( 6 ), Paths {'B': 'C', 'C': 'A'}
-    Relaxed: vertex( E ): Old ( inf ), New ( 7 ), Paths {'B': 'C', 'C': 'A', 'D': 'C'}
+Node( C ) with Weight( 2 ) is added to the Visited( {'C', 'A', 'B'} )
+    Relaxed: vertex( B ): Old ( 3 ), New ( 3 ), Paths {'B': 'C', 'C': 'A'}
+    Relaxed: vertex( D ): Old ( 6 ), New ( 6 ), Paths {'B': 'C', 'C': 'A', 'D': 'C'}
+    Relaxed: vertex( E ): Old ( 7 ), New ( 7 ), Paths {'B': 'C', 'C': 'A', 'D': 'C', 'E': 'C'}
 
-Node( B ) with Weight( 3 ) is added to the Visited( {'B', 'E', 'A', 'D', 'C'} )
+Node( B ) with Weight( 3 ) is added to the Visited( {'B', 'C', 'A', 'E', 'D'} )
     No edge relaxation is needed for Node( C )
-    Relaxed: vertex( D ): Old ( 6 ), New ( 5 ), Paths {'B': 'C', 'C': 'A', 'D': 'C', 'E': 'C'}
-    Relaxed: vertex( E ): Old ( 7 ), New ( 6 ), Paths {'B': 'C', 'C': 'A', 'D': 'B', 'E': 'C'}
+    Relaxed: vertex( D ): Old ( 5 ), New ( 5 ), Paths {'B': 'C', 'C': 'A', 'D': 'B', 'E': 'C'}
+    Relaxed: vertex( E ): Old ( 6 ), New ( 6 ), Paths {'B': 'C', 'C': 'A', 'D': 'B', 'E': 'B'}
 
-Node( D ) with Weight( 5 ) is added to the Visited( {'B', 'E', 'A', 'D', 'C'} )
+Node( D ) with Weight( 5 ) is added to the Visited( {'B', 'C', 'A', 'E', 'D'} )
     No unvisited outgoing edge from Node( D )
 
-Node( E ) with Weight( 6 ) is added to the Visited( {'B', 'E', 'A', 'D', 'C'} )
+Node( E ) with Weight( 6 ) is added to the Visited( {'B', 'C', 'A', 'E', 'D'} )
     No edge relaxation is needed for Node( D )
 
 Shortest Distance to Each Node:
-    ({'B': 3, 'E': 6, 'A': 0, 'D': 5, 'C': 2}, {'B': 'C', 'C': 'A', 'D': 'B', 'E': 'B'})
+    ({'B': 3, 'C': 2, 'A': 0, 'E': 6, 'D': 5}, {'B': 'C', 'C': 'A', 'D': 'B', 'E': 'B'})
 
 # Q2) Application of Disjkstra's and MST Algorithms
 
@@ -227,7 +229,7 @@ NY         Boston  .................... 306
 
 # Q3
 
-## Input Text File
+## Input Text File (no file provided, so sample text file was self-created)
 
 ![1746843263222](image/README/1746843263222.png)
 
